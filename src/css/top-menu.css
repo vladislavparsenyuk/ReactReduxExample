@@ -1,0 +1,31 @@
+
+#top-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #f5f5f5;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+#top-menu .container {
+    height: 100%;
+    display: flex;
+}
+#top-menu .top-menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #464646;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+#top-menu .top-menu-item.active,
+#top-menu .top-menu-item:hover {
+    background-color: #e6e6e6;
+}
+#top-menu .top-menu-item + .top-menu-item {
+    border-left: 1px solid #e6e6e6;
+}
