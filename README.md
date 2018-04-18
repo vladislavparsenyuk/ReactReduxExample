@@ -1,2 +1,2 @@
 # ReactReduxExample
-React Redux code example
+Example of a single page application with React, Redux, React-router, Webpack, Babel

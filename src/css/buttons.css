@@ -3,7 +3,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 5px 15px;
+    height: 36px;
+    padding-left: 15px;
+    padding-right: 15px;
     border-radius: 20px;
     background-color: #fff;
     border: 1px solid #e6e6e6;
@@ -25,6 +27,16 @@
 }
 .button.blue:hover {
     background-color: #2893eb;
+    color: #fff;
+}
+
+.button.green {
+    color: #9cd666;
+    border-color: #9cd666;
+}
+.button.green.active,
+.button.green:hover {
+    background-color: #9cd666;
     color: #fff;
 }
 

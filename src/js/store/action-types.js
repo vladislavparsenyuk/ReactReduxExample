@@ -1,0 +1,7 @@
+export default {
+    ACTION_1: 'ACTION_1',
+    TOGGLE_TREE: 'TOGGLE_TREE',
+    CHANGE_VALUE: 'CHANGE_VALUE',
+    SHUFFLE: 'SHUFFLE',
+    UNSHUFFLE: 'UNSHUFFLE',
+};

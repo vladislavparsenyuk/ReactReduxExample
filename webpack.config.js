@@ -30,6 +30,8 @@ module.exports = {
             img: __dirname + '/src/img/',
             font: __dirname + '/src/font/',
             pages: __dirname + '/src/js/pages/',
+            store: __dirname + '/src/js/store/',
+            actions: __dirname + '/src/js/store/actions/',
             components: __dirname + '/src/js/components/',
         },
     },

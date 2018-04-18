@@ -1,4 +1,6 @@
 
+@import '~css/main.css';
+
 #app {
     position: relative;
     overflow: hidden;
