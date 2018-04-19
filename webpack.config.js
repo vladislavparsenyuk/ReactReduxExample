@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
@@ -86,7 +86,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(['./dist/*']),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             favicon: './src/favicon.ico',
@@ -99,11 +99,10 @@ module.exports = {
         //     chunks: ['landing'],
         // }),
         new ExtractTextPlugin('css/[name].bundle.min.css?[hash]'),
-        // new CopyWebpackPlugin([
-        //     // The "to:" paths are relative to the "output.path:" directory
-        //     { from: 'src/server.js', to: './server.js' },
-        //     { from: 'src/config.js', to: './config.js' },
-        // ]),
+        new CopyWebpackPlugin([
+            // The "to:" paths are relative to the "output.path:" directory
+            { from: './src/json', to: './json' },
+        ]),
     ],
     devServer: {
         inline: true,

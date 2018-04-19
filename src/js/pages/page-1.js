@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Transition } from 'react-transition-group';
 
 import actions from 'actions/page1-actions';
 
@@ -28,7 +29,7 @@ class Page1 extends React.Component {
                     <React.Fragment>
                         <Input
                             value={value}
-                            placeholder="Some word"
+                            placeholder="Type a word"
                             onChange={this.changeValue.bind(this)}
                         />
                         <Button color="green" active={isShuffled} onClick={this.toggleShuffle.bind(this)}>
