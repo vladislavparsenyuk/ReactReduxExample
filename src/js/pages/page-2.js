@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import actions from 'actions/page2-actions';
 import PageLayout from 'components/page-layout';
 import Button from 'components/button';

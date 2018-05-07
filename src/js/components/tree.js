@@ -1,5 +1,5 @@
 import React from 'react';
-import 'css/tree.css';
+import 'style/tree.less';
 
 export default class Tree extends React.Component {
     render() {

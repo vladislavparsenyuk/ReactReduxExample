@@ -11,7 +11,7 @@ import Page1 from 'pages/page-1';
 import Page2 from 'pages/page-2';
 import Page404 from 'pages/page404';
 
-import 'css/app.css';
+import 'style/app.less';
 
 export default class App extends React.Component {
     render() {

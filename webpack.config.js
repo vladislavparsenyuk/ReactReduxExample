@@ -16,6 +16,7 @@ module.exports = {
         publicPath: '/',
     },
     devtool: 'source-map',
+    stats: 'minimal',
     // externals: {}, // global & AMD libs
     optimization: {
         splitChunks: {
@@ -26,9 +27,9 @@ module.exports = {
         extensions: ['.js', '.jsx'],
         alias: {
             js: __dirname + '/src/js/',
-            css: __dirname + '/src/css/',
             img: __dirname + '/src/img/',
             font: __dirname + '/src/font/',
+            style: __dirname + '/src/style/',
             pages: __dirname + '/src/js/pages/',
             store: __dirname + '/src/js/store/',
             actions: __dirname + '/src/js/store/actions/',
@@ -43,45 +44,54 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: [['env', { 'modules': false }], 'react'],
+                        presets: [
+                            ['env', { 'modules': false }],
+                            'react',
+                        ],
                         plugins: ['transform-object-rest-spread'],
                     }
                 }
             },
             {
-                test: /\.css$/,
+                test: /\.(css|less)$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: {
-                        loader: 'css-loader',
-                        options: {
-                            minimize: true,
-                            sourceMap: true,
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                minimize: true,
+                                sourceMap: true,
+                            },
                         },
-                    }, 
-                })
+                        {
+                            loader: 'less-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        }
+                    ],
+                }),
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'img/[name].[ext]?[hash]',
-                        }
+                include: /src\/img/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: 'img/[name].[ext]?[hash]',
                     }
-                ]
+                }
             },
             {
-                test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
-                use: [
-                    {
-                        loader: "file-loader",
-                        options: {
-                            name: 'font/[name].[ext]?[hash]',
-                        }
+                test: /\.(woff2?|ttf|eot|svg)$/,
+                include: /src\/font/,
+                use: {
+                    loader: "file-loader",
+                    options: {
+                        name: 'font/[name].[ext]?[hash]',
                     }
-                ]
+                }
             },
         ]
     },
@@ -110,5 +120,6 @@ module.exports = {
         historyApiFallback: {
             index: '/index.html'
         },
+        stats: 'minimal',
     },
 };
