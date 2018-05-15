@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import 'style/top-menu.css';
+import 'style/top-menu.scss';
 
 export default class TopMenu extends React.Component {
     render() {

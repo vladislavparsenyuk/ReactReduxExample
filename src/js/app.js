@@ -6,12 +6,12 @@ import store from 'store';
 
 import TopMenu from 'components/top-menu';
 import Footer from 'components/footer';
-import Home from 'pages/home-page';
-import Page1 from 'pages/page-1';
-import Page2 from 'pages/page-2';
-import Page404 from 'pages/page404';
+import Home from 'views/home-page';
+import Page1 from 'views/page-1';
+import Page2 from 'views/page-2';
+import Page404 from 'views/page404';
 
-import 'style/app.less';
+import 'style/app.scss';
 
 export default class App extends React.Component {
     render() {

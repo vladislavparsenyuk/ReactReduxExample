@@ -16,7 +16,7 @@ module.exports = {
         publicPath: '/',
     },
     devtool: 'source-map',
-    stats: 'minimal',
+    // stats: 'minimal',
     // externals: {}, // global & AMD libs
     optimization: {
         splitChunks: {
@@ -30,7 +30,7 @@ module.exports = {
             img: __dirname + '/src/img/',
             font: __dirname + '/src/font/',
             style: __dirname + '/src/style/',
-            pages: __dirname + '/src/js/pages/',
+            views: __dirname + '/src/js/views/',
             store: __dirname + '/src/js/store/',
             actions: __dirname + '/src/js/store/actions/',
             components: __dirname + '/src/js/components/',
@@ -53,7 +53,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(css|less)$/,
+                test: /\.(css|scss)$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: [
@@ -65,7 +65,7 @@ module.exports = {
                             },
                         },
                         {
-                            loader: 'less-loader',
+                            loader: 'sass-loader',
                             options: {
                                 sourceMap: true
                             }

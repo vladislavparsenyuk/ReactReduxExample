@@ -1,8 +1,8 @@
-@treeSize: 150px;
+$treeSize: 150px;
 
 .tree {
-    width: @treeSize;
-    height: @treeSize;
+    width: $treeSize;
+    height: $treeSize;
     margin-top: 20px;
     margin-bottom: 20px;
     background-image: url(~img/tree.png);
